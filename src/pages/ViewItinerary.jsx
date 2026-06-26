@@ -17,7 +17,7 @@ function ViewItinerary() {
 
   const fetchItinerary = async () => {
     const res = await axios.get(
-      `http://localhost:3000/itinerary-details/${id}`
+      `${import.meta.env.VITE_API_URL}/itinerary-details/${id}`
     );
 
     setItinerary(res.data.itinerary);
@@ -30,7 +30,7 @@ function ViewItinerary() {
   const generateShareLink = async () => {
   try {
     const res = await axios.get(
-      `http://localhost:3000/itinerary/${id}/share-link`
+      `${import.meta.env.VITE_API_URL}/itinerary/${id}/share-link`
     );
 
     setShareUrl(res.data.shareUrl);

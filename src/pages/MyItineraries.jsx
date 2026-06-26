@@ -13,7 +13,7 @@ function MyItineraries() {
     const userId = localStorage.getItem("userId");
 
     const res = await axios.get(
-      `http://localhost:3000/itineraries/${userId}`
+      `${import.meta.env.VITE_API_URL}/itineraries/${userId}`
     );
 
     setItineraries(res.data.itineraries);

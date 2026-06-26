@@ -30,7 +30,7 @@ function UploadDocument() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/upload-booking",
+        `${import.meta.env.VITE_API_URL}/upload-booking`,
         formData
       );
 
@@ -55,7 +55,7 @@ function UploadDocument() {
 
   try {
     const res = await axios.post(
-      `http://localhost:3000/itinerary/${bookingId}`
+      `${import.meta.env.VITE_API_URL}/itinerary/${bookingId}`
     );
 
     if (res.data.success) {

@@ -13,7 +13,7 @@ function SharedItinerary() {
 
   const fetchSharedItinerary = async () => {
     const res = await axios.get(
-      `http://localhost:3000/share/${shareId}`
+      `${import.meta.env.VITE_API_URL}/share/${shareId}`
     );
 
     setItinerary(res.data.itinerary);

@@ -28,7 +28,7 @@ const [recentItineraries, setRecentItineraries] =
   const generateShareLink = async (id) => {
   try {
     const res = await axios.get(
-      `http://localhost:3000/itinerary/${id}/share-link`
+      `${import.meta.env.VITE_API_URL}/itinerary/${id}/share-link`
     );
 
     console.log(res.data.shareUrl);
@@ -48,7 +48,7 @@ const fetchStats = async () => {
     const userId = localStorage.getItem("userId");
 
     const res = await axios.get(
-      `http://localhost:3000/dashboard-stats/${userId}`
+      `${import.meta.env.VITE_API_URL}/dashboard-stats/${userId}`
     );
 
     console.log(res.data);
@@ -64,7 +64,7 @@ const fetchRecentItineraries = async () => {
     const userId = localStorage.getItem("userId");
 
     const res = await axios.get(
-      `http://localhost:3000/recent-itineraries/${userId}`
+      `${import.meta.env.VITE_API_URL}/recent-itineraries/${userId}`
     );
 
     setRecentItineraries(
@@ -80,7 +80,7 @@ const fetchRecentBookings = async () => {
     const userId = localStorage.getItem("userId");
 
     const res = await axios.get(
-      `http://localhost:3000/recent-bookings/${userId}`
+      `${import.meta.env.VITE_API_URL}/recent-bookings/${userId}`
     );
 
     setRecentBookings(res.data.bookings);
